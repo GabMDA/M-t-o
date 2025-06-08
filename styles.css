@@ -1,0 +1,221 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #eef1f6;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  color: #2196F3;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, select, button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.day-selector {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.day-selector button {
+  padding: 8px 12px;
+  background-color: #f0f0f0;
+  border: 1px solid #2196F3;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #2196F3;
+}
+
+.day-selector button.selected {
+  background-color: #2196F3;
+  color: white;
+}
+
+#results {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  padding: 15px;
+  background-color: #f9fbff;
+  border-left: 4px solid #2196F3;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);
+}
+
+.card p {
+  margin: 5px 0;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.switch-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 24px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.3s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* Bouton toggle mode sombre */
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: flex-end;
+}
+
+/* Mode sombre */
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark .container {
+  background-color: #1e1e1e;
+}
+
+body.dark h1 {
+  color: #90caf9;
+}
+
+body.dark .day-selector button {
+  background-color: #333;
+  color: #90caf9;
+  border-color: #90caf9;
+}
+
+body.dark .day-selector button.selected {
+  background-color: #90caf9;
+  color: #121212;
+}
+
+body.dark .card {
+  background-color: #2a2a2a;
+  border-left-color: #90caf9;
+}
+
+body.dark input,
+body.dark select,
+body.dark button[type="submit"] {
+  background-color: #333;
+  color: #e0e0e0;
+  border: 1px solid #444;
+}
+
+body.dark button[type="submit"] {
+  background-color: #90caf9;
+  color: #121212;
+}
+
+body.dark .slider {
+  background-color: #555;
+}
+
+body.dark input:checked + .slider {
+  background-color: #90caf9;
+}
+
+#reset-btn {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+#reset-btn:hover {
+  background-color: #1976D2;
+}
+
+/* Style du bouton en mode sombre */
+body.dark #reset-btn {
+  background-color: #90caf9;
+  color: #121212;
+  border: 1px solid #444;
+}
+
+body.dark #reset-btn:hover {
+  background-color: #64b5f6;
+}
